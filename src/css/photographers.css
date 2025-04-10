@@ -1,0 +1,211 @@
+/* Photographer Grid Styles */
+.photographers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Photographer Card Styles */
+.photographer-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.photographer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.photographer-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Image Section */
+.photographer-img {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.photographer-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.photographer-card:hover .photographer-img img {
+  transform: scale(1.05);
+}
+
+.photographer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.photographer-card:hover .photographer-overlay {
+  opacity: 1;
+}
+
+.view-profile-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-profile-btn:hover {
+  background-color: #ff5252;
+}
+
+/* Info Section - Improved Alignment */
+.photographer-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  min-height: 250px; /* Fixed height for consistent cards */
+}
+
+/* Header Section */
+.photographer-header {
+  margin-bottom: 12px;
+}
+
+.photographer-name {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.2;
+}
+
+.photographer-tag {
+  display: inline-block;
+  background-color: #f0f0f0;
+  color: #666;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Stats Section */
+.photographer-stats-mini {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.stat-mini {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.stat-mini i {
+  margin-right: 5px;
+  color: #ff6b6b;
+  font-size: 14px;
+}
+
+/* Bio Section */
+.photographer-bio {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 63px; /* Fixed height for 3 lines of text */
+}
+
+/* Footer Section */
+.photographer-footer {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  margin-top: auto;
+}
+
+.photographer-location {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.photographer-location i {
+  color: #ff6b6b;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.contact-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.contact-btn:hover {
+  background-color: #ff5252;
+}
+
+/* Ensure all cards have the same height */
+.photographers-grid {
+  grid-auto-rows: 1fr;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .photographers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .photographer-info {
+    padding: 15px;
+    min-height: 230px;
+  }
+  
+  .photographer-bio {
+    -webkit-line-clamp: 2;
+    height: 42px;
+  }
+}
